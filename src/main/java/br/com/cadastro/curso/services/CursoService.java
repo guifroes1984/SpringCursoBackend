@@ -132,7 +132,6 @@ public class CursoService {
         if (curso != null && !cursos.isEmpty()) {
             throw new RuntimeException("Existe(m) Curso(s) Planejados(s) Dentro do Período Informado");
         }
-
         return null;
     }
 	
@@ -151,9 +150,10 @@ public class CursoService {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public Curso recuperarCurso(Integer idCurso) {
-
 		return cursoRepository.findById(idCurso).get();
 	}
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public void validaDelete(Integer idCurso) {
 		Optional<Curso> curso = cursoRepository.findById(idCurso);
